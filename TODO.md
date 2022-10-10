@@ -8,9 +8,10 @@
     * Wrong data, duplicates, missing, outliers ...
     * syntactic accuracy
     * be careful to default values
+    * we have to fix this before visualization and analisys
 3. Visualization
     * Descriptive statistics tools
-4. Single attribute analisy
+4. Single attribute analisys
     * Central tendency, dispersion
     * single dimension outliers
 5. Correlation analysis (multi attribute analisys)
@@ -19,8 +20,7 @@
     * also useful to detect multi dimensional outiers
     * pearson's correlation
     * compare the results eith the expected behaviour
-6. How do we handle missing values?
-7. Can we extract other useful attributes?
+6. Can we extract other useful attributes?
 
 
 # Advanced topics
