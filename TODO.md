@@ -22,6 +22,11 @@
     * compare the results eith the expected behaviour
 6. Can we extract other useful attributes?
 
+# Improvements in plots (Nice to have)
+1.  Creating a distribution plot of the user names
+2. Rearranging the topics for the notebook so that it follows the coloumn names.
+
+
 
 # Advanced topics
 

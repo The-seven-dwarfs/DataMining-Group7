@@ -38,7 +38,7 @@ def repair_lang_attribute(users_df: pandas.DataFrame):
 	# dropping wrong fields
 	wrong_index = lambda x: True if x[1] in wrong_fields else False
 	wrong_indexes = [index for (index, _) in filter(wrong_index, enumerate(users_df["lang"]))]
-	users_df.drop(index=wrong_indexes, inplace=True)
+	#users_df.drop(index=wrong_indexes, inplace=True)
 
 	# mapping incorrect values to fixed ones
 	for language in to_map_fields:
