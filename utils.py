@@ -1,7 +1,16 @@
 from math import log, ceil
 import shutil as shl
 import pandas as pd
+import numpy as np
 
+
+def get_inf_elements(series: pd.Series) -> pd.Series:
+    """
+    Given a series, return the subset of elements containt inf value
+    """
+    tmp = series.map(np.isinf, na_action="ignore")
+    return tmp[tmp == True]
+    
 def get_sturges_bins(sample_size: int)->float:
 	"""
 	Given the sample size of a distribution, returns the number of bins 
