@@ -6,6 +6,10 @@
     * Categorical, ordinal, continuous ...
 2. Data quality
     * Wrong data, duplicates, missing, outliers ...
+    ** categorize each strange numerical value found in the tweets dataframe, and decide what to do with them.
+    *** What to do with infinite numbers? -> NaN
+    *** What to do with negative numbers? analyse them further, possible NaN
+    *** What to do with immense numbers?  numbers above plausible treshold -> Nan
     * syntactic accuracy
     * be careful to default values
     * we have to fix this before visualization and analisys
@@ -32,3 +36,5 @@
 - Check if tweet has been made befor the creation date of the user account
 - Decide the structure of this notebook (maybe current one could be too much rigid
 
+# Citations 
+- https://backlinko.com/twitter-users
