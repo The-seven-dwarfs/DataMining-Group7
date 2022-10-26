@@ -6,15 +6,12 @@
     * Categorical, ordinal, continuous ...
 2. Data quality
     * Wrong data, duplicates, missing, outliers ...
-    ** categorize each strange numerical value found in the tweets dataframe, and decide what to do with them.
-    *** What to do with infinite numbers? -> NaN
-    *** What to do with negative numbers? analyse them further, possible NaN
-    *** What to do with immense numbers?  numbers above plausible treshold -> Nan
     * syntactic accuracy
     * be careful to default values
     * we have to fix this before visualization and analisys
 3. Visualization
     * Descriptive statistics tools
+    ** fix the plots, because they really suck
 4. Single attribute analisys
     * Central tendency, dispersion
     * single dimension outliers
