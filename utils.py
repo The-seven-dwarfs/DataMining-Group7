@@ -9,7 +9,7 @@ def get_inf_elements(series: pd.Series) -> pd.Series:
     Given a series, return the subset of elements containt inf value
     """
     tmp = series.map(np.isinf, na_action="ignore")
-    return tmp[tmp == True]
+    return series[tmp == True]
     
 def get_sturges_bins(sample_size: int)->float:
 	"""
