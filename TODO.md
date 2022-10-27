@@ -6,6 +6,7 @@
     * Categorical, ordinal, continuous ...
 2. Data quality
     * Wrong data, duplicates, missing, outliers ...
+    ** Understand if the duplicates tweet with different id are the result of a bot user or an error
     * syntactic accuracy
     * be careful to default values
     * we have to fix this before visualization and analisys
