@@ -37,3 +37,7 @@
 
 # Citations 
 - https://backlinko.com/twitter-users
+
+
+# Changelog
+- removed tweets with null text and empty text
