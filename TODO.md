@@ -41,3 +41,7 @@
 
 # Changelog
 - removed tweets with null text and empty text
+
+# todo
+
+- separate the tweets based on language and apply statiscts in each subgroup (ex. averalge length of chinese tweets)
