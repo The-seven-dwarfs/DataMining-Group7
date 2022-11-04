@@ -71,7 +71,6 @@ def concurrent_language_model(dataset : pd.DataFrame) -> pd.DataFrame:
 		detector = LanguageDetectorBuilder.from_all_languages().with_low_accuracy_mode().with_preloaded_language_models().build()
 		dataset_part["tweet_lang"] = [detector.detect_language_of(text) for text in dataset_part["text"]]
 		return_queue.put( (dataset_part, datset_part_number) )
-		print(dataset_part.head())
 
 	num_process = 12
 	process_list = []
@@ -97,4 +96,5 @@ def concurrent_language_model(dataset : pd.DataFrame) -> pd.DataFrame:
 	splitted_dataset = ( i for (i, _) in splitted_dataset)
 	dataset = pd.concat(splitted_dataset)
 	dataset.reset_index(drop=True, inplace=True)
+	return dataset
 
