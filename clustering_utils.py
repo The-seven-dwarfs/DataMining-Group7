@@ -5,3 +5,10 @@ def print_clustering_metrics(kmeans, transform_result):
     print('SSE %s' % kmeans.inertia_)
     print('Silhouette %s' % silhouette_score(transform_result, kmeans.labels_))
     print('Separation %s' % davies_bouldin_score(transform_result, kmeans.labels_))
+
+def get_clustering_metrics(kmeans, transform_result):
+    textstr = '\n'.join((
+        r'$SSE=%f$' % (kmeans.inertia_, ),
+        r'$Silhouette=%f$' % (silhouette_score(transform_result, kmeans.labels_), ),
+        r'$Separation=%f$' % (davies_bouldin_score(transform_result, kmeans.labels_), )))
+    return textstr
