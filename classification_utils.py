@@ -1,3 +1,4 @@
+import tensorflow as tf
 #function to discretize the variables
 #input: the dataset and the list of variables' names to discretize
 def discretize_data(dataset, variables):
@@ -29,4 +30,39 @@ def print_training_stats(history):
     ax1.set_ylabel('')
     ax1.legend()
     
-    
+def large_model_example(
+    feature_matrix_tr,
+    target_array_tr,
+    feature_matrix_vl,
+    target_array_vl
+    ):
+    in_layer = tf.keras.layers.Normalization(axis=-1)
+    in_layer.adapt(feature_matrix_tr)
+
+    model = tf.keras.models.Sequential([
+    in_layer,
+    tf.keras.layers.Dense(512, activation='relu'),
+    tf.keras.layers.Dense(512, activation='relu'),
+    tf.keras.layers.Dense(512, activation='relu'),
+    tf.keras.layers.Dense(512, activation='relu'),
+    tf.keras.layers.Dense(512, activation='relu'), 
+    tf.keras.layers.Dense(1, activation='sigmoid')
+    ])
+
+
+    model.compile(optimizer="adam",
+                loss=tf.keras.losses.BinaryCrossentropy(from_logits=True),
+                metrics=["accuracy"]
+    )
+
+    history = model.fit(
+    feature_matrix_tr,
+    target_array_tr,
+    batch_size=1024,
+    epochs=200,
+    validation_data=(feature_matrix_vl, target_array_vl),
+    shuffle=True, 
+    verbose=False
+    )
+
+    print_training_stats(history=history)
