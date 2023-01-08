@@ -17,7 +17,7 @@ def get_clustering_metrics(kmeans, transform_result):
 
 def apply_correlation_threshold(df: pd.DataFrame, correlation_method: str, threshold: float) -> pd.DataFrame:
     # Create correlation matrix
-    corr_matrix = df.corr(numeric_only=True).abs()
+    corr_matrix = df.corr(numeric_only=True, method=correlation_method).abs()
 
     # Select upper triangle of correlation matrix (correlation matrix is symmetrical)
     upper = corr_matrix.where(np.triu(np.ones(corr_matrix.shape), k=1).astype(bool))
